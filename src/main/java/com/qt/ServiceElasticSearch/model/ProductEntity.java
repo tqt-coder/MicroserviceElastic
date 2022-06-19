@@ -1,28 +1,34 @@
 package com.qt.ServiceElasticSearch.model;
 
-import com.sun.istack.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.joda.time.DateTime;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.Id;
 
-@Document(indexName = "productindex")
+@Document(indexName = "blog2", type = "article")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductEntity {
+
     @Id
-    private String iD;
+    private Long key;
 
-    @NotNull
-    private String nameProduct;
+    private DateTime eventDate;
 
-    @NotNull
-    private double priceProduct;
+    private DateTime modified;
 
-    @NotNull
-    private long quanityProduct;
+    private String countryCode;
+
+    private String datasetName;
+
+    private String language;
+
+    private String minimumDistanceAboveSurfaceInMeters;
 
 }
+
