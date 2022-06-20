@@ -1,21 +1,18 @@
 package com.qt.ServiceElasticSearch.model;
 
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
 
-import org.springframework.data.elasticsearch.annotations.Document;
 
-import javax.persistence.Id;
-
-@Document(indexName = "table_products", type = "article")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class ProductEntity {
+public class ProductModel {
 
-    @Id
     private String id;
     private String productId;
 
@@ -25,7 +22,7 @@ public class ProductEntity {
 
     private Double price;
 
-    private String startDateSell;
+    private DateTime startDateSell;
 
     private Integer quantity;
 
@@ -33,5 +30,5 @@ public class ProductEntity {
 
 
 
-}
 
+}
